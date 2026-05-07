@@ -13,13 +13,14 @@
       theme: {
         extend: {
           colors: {
-            forest: '#1a4731',
-            'forest-dark': '#0f2a1d',
-            'forest-light': '#2d6847',
+            forest: '#111111',
+            'forest-dark': '#080808',
+            'forest-light': '#1c1c1c',
             gold: '#f5a623',
             'gold-dark': '#e09415',
-            'warm-white': '#faf9f7',
-            'warm-gray': '#f0ede8',
+            'warm-white': '#fafafa',
+            'warm-gray': '#f2f2f2',
+            'anthracite': '#111111',
           },
           fontFamily: {
             display: ['Fraunces', 'Georgia', 'serif'],
@@ -31,7 +32,7 @@
   </script>
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'DM Sans', system-ui, sans-serif; background: #faf9f7; color: #1a1a1a; }
+    body { margin: 0; font-family: 'DM Sans', system-ui, sans-serif; background: #fafafa; color: #1a1a1a; }
 
     /* Grain overlay */
     .grain::before {
@@ -60,7 +61,7 @@
 
     /* Buttons */
     .btn-gold {
-      background: #f5a623; color: #0f2a1d; font-weight: 600;
+      background: #f5a623; color: #080808; font-weight: 600;
       transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
       display: inline-flex; align-items: center; gap: 8px;
       text-decoration: none; border: none; cursor: pointer;
@@ -83,17 +84,17 @@
     }
     .card-hover:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 48px rgba(26,71,49,0.13), 0 4px 12px rgba(26,71,49,0.06);
+      box-shadow: 0 20px 48px rgba(17,17,17,0.13), 0 4px 12px rgba(17,17,17,0.06);
     }
 
     /* Form inputs */
     .inp {
       width: 100%; padding: 13px 16px; border-radius: 10px;
-      border: 1.5px solid #d8d2ca; background: #fff;
+      border: 1.5px solid #d0d0d0; background: #fff;
       font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: #1a1a1a;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .inp:focus { outline: none; border-color: #1a4731; box-shadow: 0 0 0 3px rgba(26,71,49,0.12); }
+    .inp:focus { outline: none; border-color: #111111; box-shadow: 0 0 0 3px rgba(17,17,17,0.12); }
 
     /* Nav link hover */
     .nl { transition: color 0.15s; }
@@ -108,14 +109,12 @@
     /* Step ghost number */
     .ghost-num {
       font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: 5.5rem; line-height: 1; color: #1a4731; opacity: 0.08;
+      font-size: 5.5rem; line-height: 1; color: #111111; opacity: 0.08;
       position: absolute; top: -12px; left: -4px; pointer-events: none;
     }
 
-    /* Scroll car */
+    /* Car wheels (used in other contexts) */
     .car-wheel { transform-box: fill-box; transform-origin: center; will-change: transform; }
-    #scrollCar { width: 240px; height: auto; }
-    @media (max-width: 768px) { #scrollCar { width: 155px; } }
 
     /* Scroll-reveal */
     .reveal {
@@ -153,7 +152,7 @@
     }
     .mobile-nav a.mnl:hover { color: #f5a623; }
     .mobile-nav a.mcta {
-      margin-top: 16px; padding: 14px 24px; background: #f5a623; color: #0f2a1d;
+      margin-top: 16px; padding: 14px 24px; background: #f5a623; color: #080808;
       text-decoration: none; border-radius: 10px; text-align: center;
       font-weight: 600; font-size: 1rem; display: block;
     }
@@ -188,12 +187,12 @@
 <body>
 
 <!-- ═══════════════════ NAV ═══════════════════ -->
-<nav style="position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,28,18,0.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);">
+<nav style="position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(8,8,8,0.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);">
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:66px;">
     <!-- Logo -->
     <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
       <div style="width:34px;height:34px;background:#f5a623;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M4 16L5.5 9H18.5L20 16M4 16H20M4 16L3 20H21L20 16M8 13H10M14 13H16" stroke="#0f2a1d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.5" cy="19" r="1.4" fill="#0f2a1d"/><circle cx="16.5" cy="19" r="1.4" fill="#0f2a1d"/></svg>
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M4 16L5.5 9H18.5L20 16M4 16H20M4 16L3 20H21L20 16M8 13H10M14 13H16" stroke="#080808" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.5" cy="19" r="1.4" fill="#080808"/><circle cx="16.5" cy="19" r="1.4" fill="#080808"/></svg>
       </div>
       <span style="font-family:'Fraunces',serif;font-weight:900;font-size:1.3rem;color:#fff;letter-spacing:-0.025em;">pkwcash<span style="color:#f5a623;">24</span></span>
     </a>
@@ -218,12 +217,12 @@
 </div>
 
 <!-- ═══════════════════ HERO ═══════════════════ -->
-<section class="grain" style="position:relative;background:#1a4731;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:66px;">
+<section class="grain" style="position:relative;background:#111111;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:66px;">
   <!-- Background blobs -->
   <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
     <div style="position:absolute;top:-15%;right:-8%;width:65%;height:80%;background:radial-gradient(ellipse,rgba(245,166,35,0.07) 0%,transparent 60%);border-radius:50%;"></div>
-    <div style="position:absolute;bottom:-25%;left:-12%;width:65%;height:75%;background:radial-gradient(ellipse,rgba(10,28,18,0.55) 0%,transparent 65%);border-radius:50%;"></div>
-    <div style="position:absolute;top:30%;right:5%;width:30%;height:40%;background:radial-gradient(ellipse,rgba(45,104,71,0.35) 0%,transparent 70%);border-radius:50%;"></div>
+    <div style="position:absolute;bottom:-25%;left:-12%;width:65%;height:75%;background:radial-gradient(ellipse,rgba(8,8,8,0.55) 0%,transparent 65%);border-radius:50%;"></div>
+    <div style="position:absolute;top:30%;right:5%;width:30%;height:40%;background:radial-gradient(ellipse,rgba(28,28,28,0.35) 0%,transparent 70%);border-radius:50%;"></div>
   </div>
 
   <!-- Night Drive Canvas -->
@@ -292,108 +291,109 @@
 </section>
 
 <!-- ═══════════════════ HOW IT WORKS ═══════════════════ -->
-<section id="ablauf" class="sec-pad" style="padding:96px 24px;background:#fff;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:68px;">
-      <span class="slabel reveal" style="color:#1a4731;">Der Ablauf</span>
-      <h2 class="reveal" style="font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2rem,4vw,2.9rem);color:#0f2a1d;margin:0;letter-spacing:-0.025em;line-height:1.1;">
-        In 3 Schritten zum <em style="font-style:italic;color:#1a4731;">besten Preis</em>
-      </h2>
-    </div>
+<section id="ablauf" style="height:290vh;position:relative;background:#fff;">
+  <div style="position:sticky;top:0;height:100vh;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;">
 
-    <div class="steps-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;position:relative;">
-      <!-- connector -->
-      <div class="steps-connector" style="position:absolute;top:44px;left:calc(16.7% + 20px);right:calc(16.7% + 20px);height:2px;background:linear-gradient(90deg,#1a4731,#f5a623,#1a4731);opacity:0.18;pointer-events:none;"></div>
+    <div style="max-width:620px;width:100%;padding:0 24px;">
 
-      <!-- Step 1 -->
-      <div class="reveal card-hover" style="position:relative;background:#faf9f7;border:1.5px solid #ede9e2;border-radius:18px;padding:36px 28px 28px;">
-        <span class="ghost-num">01</span>
-        <div style="position:relative;z-index:1;">
-          <div style="width:54px;height:54px;background:#1a4731;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 5H7C5.9 5 5 5.9 5 7V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V7C19 5.9 18.1 5 17 5H15M9 5C9 5.55 9.45 6 10 6H14C14.55 6 15 5.55 15 5M9 5C9 4.45 9.45 4 10 4H14C14.55 4 15 4.45 15 5M12 12H15M12 16H15M9 12H9.01M9 16H9.01" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:#0f2a1d;margin:0 0 10px;letter-spacing:-0.015em;">Auto bewerten</h3>
-          <p style="color:#6b6560;font-size:0.92rem;line-height:1.68;margin:0;">Füllen Sie unser kurzes Formular aus — Marke, Kilometerstand, Baujahr. Dauert weniger als 2 Minuten.</p>
-        </div>
+      <!-- Heading -->
+      <div style="text-align:center;margin-bottom:52px;">
+        <span class="slabel" style="color:#111111;">Der Ablauf</span>
+        <h2 style="font-family:'Fraunces',serif;font-weight:900;font-size:clamp(1.9rem,4vw,2.8rem);color:#080808;margin:8px 0 0;letter-spacing:-0.025em;line-height:1.1;">
+          In 3 Schritten zum <em style="font-style:italic;color:#111111;">besten Preis</em>
+        </h2>
       </div>
 
-      <!-- Step 2 (highlighted) -->
-      <div class="reveal card-hover" style="position:relative;background:#1a4731;border:1.5px solid #2d6847;border-radius:18px;padding:36px 28px 28px;">
-        <span style="font-family:'Fraunces',serif;font-weight:900;font-size:5.5rem;line-height:1;color:#fff;opacity:0.07;position:absolute;top:-12px;left:-4px;pointer-events:none;">02</span>
-        <div style="position:relative;z-index:1;">
-          <div style="width:54px;height:54px;background:#f5a623;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.7 8.6L22 9.3L16.8 14.1L18.4 21.3L12 17.8L5.6 21.3L7.2 14.1L2 9.3L9.3 8.6L12 2Z" fill="#0f2a1d" stroke="#0f2a1d" stroke-width="1.5" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:#fff;margin:0 0 10px;letter-spacing:-0.015em;">Angebot erhalten</h3>
-          <p style="color:rgba(232,240,235,0.72);font-size:0.92rem;line-height:1.68;margin:0;">Unser Team meldet sich innerhalb weniger Stunden mit einem fairen, verbindlichen Kaufangebot.</p>
-        </div>
-      </div>
+      <!-- Vertical timeline -->
+      <div style="position:relative;padding-left:76px;">
 
-      <!-- Step 3 -->
-      <div class="reveal card-hover" style="position:relative;background:#faf9f7;border:1.5px solid #ede9e2;border-radius:18px;padding:36px 28px 28px;">
-        <span class="ghost-num">03</span>
-        <div style="position:relative;z-index:1;">
-          <div style="width:54px;height:54px;background:#1a4731;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5L19 12L12 19" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:#0f2a1d;margin:0 0 10px;letter-spacing:-0.015em;">Sofort verkaufen</h3>
-          <p style="color:#6b6560;font-size:0.92rem;line-height:1.68;margin:0;">Sie sagen Ja — wir holen ab, zahlen sofort aus. Komplett unkompliziert, ohne Papierkram für Sie.</p>
+        <!-- Track line -->
+        <div style="position:absolute;left:26px;top:14px;bottom:14px;width:2px;background:#e4e4e4;border-radius:2px;">
+          <div id="ablaufLine" style="width:100%;height:0%;background:linear-gradient(to bottom,#111111 0%,#f5a623 55%,#111111 100%);border-radius:2px;transition:none;"></div>
         </div>
+
+        <!-- Step 1 -->
+        <div id="ablaufStep1" style="position:relative;margin-bottom:38px;opacity:0.2;transform:translateY(10px);transition:opacity 0.45s cubic-bezier(0.16,1,0.3,1),transform 0.45s cubic-bezier(0.16,1,0.3,1);">
+          <div id="ablaufIcon1" style="position:absolute;left:-76px;top:0;width:54px;height:54px;background:#e4e4e4;border-radius:13px;display:flex;align-items:center;justify-content:center;color:#aaa;transition:background 0.4s,color 0.4s;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5H7C5.9 5 5 5.9 5 7V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V7C19 5.9 18.1 5 17 5H15M9 5C9 5.55 9.45 6 10 6H14C14.55 6 15 5.55 15 5M9 5C9 4.45 9.45 4 10 4H14C14.55 4 15 4.45 15 5M12 12H15M12 16H15M9 12H9.01M9 16H9.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.22rem;color:#080808;margin:0 0 8px;letter-spacing:-0.015em;">Auto bewerten</h3>
+          <p style="color:#6b6560;font-size:0.91rem;line-height:1.7;margin:0;">Füllen Sie unser kurzes Formular aus — Marke, Kilometerstand, Baujahr. Dauert weniger als 2 Minuten.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div id="ablaufStep2" style="position:relative;margin-bottom:38px;opacity:0.2;transform:translateY(10px);transition:opacity 0.45s cubic-bezier(0.16,1,0.3,1),transform 0.45s cubic-bezier(0.16,1,0.3,1);">
+          <div id="ablaufIcon2" style="position:absolute;left:-76px;top:0;width:54px;height:54px;background:#e4e4e4;border-radius:13px;display:flex;align-items:center;justify-content:center;color:#aaa;transition:background 0.4s,color 0.4s;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.7 8.6L22 9.3L16.8 14.1L18.4 21.3L12 17.8L5.6 21.3L7.2 14.1L2 9.3L9.3 8.6L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.22rem;color:#080808;margin:0 0 8px;letter-spacing:-0.015em;">Angebot erhalten</h3>
+          <p style="color:#6b6560;font-size:0.91rem;line-height:1.7;margin:0;">Unser Team meldet sich innerhalb weniger Stunden mit einem fairen, verbindlichen Kaufangebot.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div id="ablaufStep3" style="position:relative;opacity:0.2;transform:translateY(10px);transition:opacity 0.45s cubic-bezier(0.16,1,0.3,1),transform 0.45s cubic-bezier(0.16,1,0.3,1);">
+          <div id="ablaufIcon3" style="position:absolute;left:-76px;top:0;width:54px;height:54px;background:#e4e4e4;border-radius:13px;display:flex;align-items:center;justify-content:center;color:#aaa;transition:background 0.4s,color 0.4s;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.22rem;color:#080808;margin:0 0 8px;letter-spacing:-0.015em;">Sofort verkaufen</h3>
+          <p style="color:#6b6560;font-size:0.91rem;line-height:1.7;margin:0;">Sie sagen Ja — wir holen ab, zahlen sofort aus. Komplett unkompliziert, ohne Papierkram für Sie.</p>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════ WHY PKWCASH24 ═══════════════════ -->
-<section id="vorteile" class="sec-pad" style="padding:96px 24px;background:#f0ede8;">
+<section id="vorteile" class="sec-pad" style="padding:96px 24px;background:#f2f2f2;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:60px;">
-      <span class="slabel reveal" style="color:#1a4731;">Warum wir?</span>
-      <h2 class="reveal" style="font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2rem,4vw,2.9rem);color:#0f2a1d;margin:0;letter-spacing:-0.025em;line-height:1.1;">
-        Ihr verlässlicher Partner <em style="font-style:italic;color:#1a4731;">beim Autoverkauf</em>
+      <span class="slabel reveal" style="color:#111111;">Warum wir?</span>
+      <h2 class="reveal" style="font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2rem,4vw,2.9rem);color:#080808;margin:0;letter-spacing:-0.025em;line-height:1.1;">
+        Ihr verlässlicher Partner <em style="font-style:italic;color:#111111;">beim Autoverkauf</em>
       </h2>
     </div>
 
     <div class="benefits-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;">
 
       <!-- 1 -->
-      <div class="reveal card-hover" style="background:#fff;border-radius:16px;padding:30px 24px;box-shadow:0 2px 6px rgba(26,71,49,0.04),0 8px 20px rgba(26,71,49,0.04);">
-        <div style="width:46px;height:46px;background:rgba(26,71,49,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 17V15M12 7V13" stroke="#1a4731" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="15" r="0.5" fill="#1a4731"/><path d="M7 9.5C7 9.5 8.5 7 12 7C15.5 7 17 9 17 10.5C17 13 14.5 13.5 12 14V17" stroke="#1a4731" stroke-width="2" stroke-linecap="round"/></svg>
+      <div class="reveal card-hover" style="background:#fff;border-radius:16px;padding:30px 24px;box-shadow:0 2px 6px rgba(17,17,17,0.04),0 8px 20px rgba(17,17,17,0.04);">
+        <div style="width:46px;height:46px;background:rgba(17,17,17,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 17V15M12 7V13" stroke="#111111" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="15" r="0.5" fill="#111111"/><path d="M7 9.5C7 9.5 8.5 7 12 7C15.5 7 17 9 17 10.5C17 13 14.5 13.5 12 14V17" stroke="#111111" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:#0f2a1d;margin:0 0 8px;">Faire Preise</h3>
+        <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:#080808;margin:0 0 8px;">Faire Preise</h3>
         <p style="color:#6b6560;font-size:0.87rem;line-height:1.65;margin:0;">Marktgerechte Bewertung auf Basis aktueller Daten. Kein Drücken, kein Feilschen.</p>
       </div>
 
       <!-- 2 -->
-      <div class="reveal card-hover" style="background:#fff;border-radius:16px;padding:30px 24px;box-shadow:0 2px 6px rgba(26,71,49,0.04),0 8px 20px rgba(26,71,49,0.04);">
+      <div class="reveal card-hover" style="background:#fff;border-radius:16px;padding:30px 24px;box-shadow:0 2px 6px rgba(17,17,17,0.04),0 8px 20px rgba(17,17,17,0.04);">
         <div style="width:46px;height:46px;background:rgba(245,166,35,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 6V12L16 14M22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2C17.52 2 22 6.48 22 12Z" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:#0f2a1d;margin:0 0 8px;">Schnelle Abwicklung</h3>
+        <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:#080808;margin:0 0 8px;">Schnelle Abwicklung</h3>
         <p style="color:#6b6560;font-size:0.87rem;line-height:1.65;margin:0;">Von der Anfrage bis zur Auszahlung oft keine 24 Stunden. Wir respektieren Ihre Zeit.</p>
       </div>
 
       <!-- 3 -->
-      <div class="reveal card-hover" style="background:#fff;border-radius:16px;padding:30px 24px;box-shadow:0 2px 6px rgba(26,71,49,0.04),0 8px 20px rgba(26,71,49,0.04);">
-        <div style="width:46px;height:46px;background:rgba(26,71,49,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#1a4731" stroke-width="2" stroke-linecap="round"/></svg>
+      <div class="reveal card-hover" style="background:#fff;border-radius:16px;padding:30px 24px;box-shadow:0 2px 6px rgba(17,17,17,0.04),0 8px 20px rgba(17,17,17,0.04);">
+        <div style="width:46px;height:46px;background:rgba(17,17,17,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#111111" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:#0f2a1d;margin:0 0 8px;">Kostenlose Bewertung</h3>
+        <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:#080808;margin:0 0 8px;">Kostenlose Bewertung</h3>
         <p style="color:#6b6560;font-size:0.87rem;line-height:1.65;margin:0;">Kein Risiko, keine versteckten Kosten. Vollständig kostenlos und unverbindlich.</p>
       </div>
 
       <!-- 4 -->
-      <div class="reveal card-hover" style="background:#fff;border-radius:16px;padding:30px 24px;box-shadow:0 2px 6px rgba(26,71,49,0.04),0 8px 20px rgba(26,71,49,0.04);">
-        <div style="width:46px;height:46px;background:rgba(26,71,49,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10M20.6 5.98C17.45 3.2 12 3 12 3S6.55 3.2 3.4 5.98C2.5 6.75 2 7.85 2 9V14C2 18.42 5.58 22 10 22H14C18.42 22 22 18.42 22 14V9C22 7.85 21.5 6.75 20.6 5.98Z" stroke="#1a4731" stroke-width="2" stroke-linecap="round"/></svg>
+      <div class="reveal card-hover" style="background:#fff;border-radius:16px;padding:30px 24px;box-shadow:0 2px 6px rgba(17,17,17,0.04),0 8px 20px rgba(17,17,17,0.04);">
+        <div style="width:46px;height:46px;background:rgba(17,17,17,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10M20.6 5.98C17.45 3.2 12 3 12 3S6.55 3.2 3.4 5.98C2.5 6.75 2 7.85 2 9V14C2 18.42 5.58 22 10 22H14C18.42 22 22 18.42 22 14V9C22 7.85 21.5 6.75 20.6 5.98Z" stroke="#111111" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:#0f2a1d;margin:0 0 8px;">Seriöser Partner</h3>
+        <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:#080808;margin:0 0 8px;">Seriöser Partner</h3>
         <p style="color:#6b6560;font-size:0.87rem;line-height:1.65;margin:0;">Eingetragener Gewerbebetrieb, transparenter Prozess, kein Risiko für Sie.</p>
       </div>
 
       <!-- 5 (dark) -->
-      <div class="reveal card-hover" style="background:#1a4731;border-radius:16px;padding:30px 24px;box-shadow:0 8px 28px rgba(26,71,49,0.28);">
+      <div class="reveal card-hover" style="background:#111111;border-radius:16px;padding:30px 24px;box-shadow:0 8px 28px rgba(17,17,17,0.28);">
         <div style="width:46px;height:46px;background:rgba(245,166,35,0.18);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M1 3H3L5 14C5 14 8 17 12 17C16 17 19 14 19 14L21 6H5" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21C9 21.55 8.55 22 8 22C7.45 22 7 21.55 7 21C7 20.45 7.45 20 8 20C8.55 20 9 20.45 9 21Z" fill="#f5a623"/><path d="M17 21C17 21.55 16.55 22 16 22C15.45 22 15 21.55 15 21C15 20.45 15.45 20 16 20C16.55 20 17 20.45 17 21Z" fill="#f5a623"/></svg>
         </div>
@@ -406,10 +406,10 @@
 </section>
 
 <!-- ═══════════════════ FORM ═══════════════════ -->
-<section id="angebot" class="sec-pad" style="padding:96px 24px;background:#1a4731;position:relative;overflow:hidden;">
+<section id="angebot" class="sec-pad" style="padding:96px 24px;background:#111111;position:relative;overflow:hidden;">
   <div style="position:absolute;inset:0;pointer-events:none;">
     <div style="position:absolute;top:-25%;right:-10%;width:55%;height:90%;background:radial-gradient(ellipse,rgba(245,166,35,0.06) 0%,transparent 60%);border-radius:50%;"></div>
-    <div style="position:absolute;bottom:-20%;left:-8%;width:50%;height:70%;background:radial-gradient(ellipse,rgba(10,28,18,0.5) 0%,transparent 70%);border-radius:50%;"></div>
+    <div style="position:absolute;bottom:-20%;left:-8%;width:50%;height:70%;background:radial-gradient(ellipse,rgba(8,8,8,0.5) 0%,transparent 70%);border-radius:50%;"></div>
   </div>
   <div style="max-width:800px;margin:0 auto;position:relative;z-index:1;">
     <div style="text-align:center;margin-bottom:44px;">
@@ -453,7 +453,7 @@
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M13 6L19 12L13 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <p style="text-align:center;color:#a09b96;font-size:0.78rem;margin:14px 0 0;line-height:1.55;">
-          Unverbindlich &amp; kostenlos &middot; Kein Spam &middot; Mit Absenden stimmen Sie der <a href="#" style="color:#1a4731;text-decoration:underline;">Datenschutzerklärung</a> zu.
+          Unverbindlich &amp; kostenlos &middot; Kein Spam &middot; Mit Absenden stimmen Sie der <a href="#" style="color:#111111;text-decoration:underline;">Datenschutzerklärung</a> zu.
         </p>
       </form>
     </div>
@@ -464,60 +464,60 @@
 <section id="bewertungen" class="sec-pad" style="padding:96px 24px;background:#fff;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:60px;">
-      <span class="slabel reveal" style="color:#1a4731;">Kundenstimmen</span>
-      <h2 class="reveal" style="font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2rem,4vw,2.9rem);color:#0f2a1d;margin:0;letter-spacing:-0.025em;line-height:1.1;">
-        Was unsere Kunden <em style="font-style:italic;color:#1a4731;">sagen</em>
+      <span class="slabel reveal" style="color:#111111;">Kundenstimmen</span>
+      <h2 class="reveal" style="font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2rem,4vw,2.9rem);color:#080808;margin:0;letter-spacing:-0.025em;line-height:1.1;">
+        Was unsere Kunden <em style="font-style:italic;color:#111111;">sagen</em>
       </h2>
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-bottom:56px;">
 
       <!-- T1 -->
-      <div class="reveal card-hover" style="background:#faf9f7;border:1.5px solid #ede9e2;border-radius:18px;padding:32px;">
+      <div class="reveal card-hover" style="background:#fafafa;border:1.5px solid #e4e4e4;border-radius:18px;padding:32px;">
         <div style="color:#f5a623;font-size:1.1rem;margin-bottom:18px;">★★★★★</div>
         <p style="color:#3a3530;font-size:0.93rem;line-height:1.72;margin:0 0 24px;font-style:italic;">
           "Ich war skeptisch, aber der Ablauf war wirklich unkompliziert. Innerhalb von einem Tag hatte ich das Geld auf dem Konto. Absolut empfehlenswert!"
         </p>
         <div style="display:flex;align-items:center;gap:12px;">
-          <div style="width:42px;height:42px;background:linear-gradient(135deg,#1a4731,#2d6847);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <div style="width:42px;height:42px;background:linear-gradient(135deg,#111111,#1c1c1c);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
             <span style="color:#fff;font-family:'Fraunces',serif;font-weight:700;font-size:1rem;">TH</span>
           </div>
           <div>
-            <div style="font-weight:600;color:#0f2a1d;font-size:0.88rem;">Thomas Herrmann</div>
+            <div style="font-weight:600;color:#080808;font-size:0.88rem;">Thomas Herrmann</div>
             <div style="color:#a09b96;font-size:0.78rem;">München &middot; VW Golf</div>
           </div>
         </div>
       </div>
 
       <!-- T2 -->
-      <div class="reveal card-hover" style="background:#faf9f7;border:1.5px solid #ede9e2;border-radius:18px;padding:32px;">
+      <div class="reveal card-hover" style="background:#fafafa;border:1.5px solid #e4e4e4;border-radius:18px;padding:32px;">
         <div style="color:#f5a623;font-size:1.1rem;margin-bottom:18px;">★★★★★</div>
         <p style="color:#3a3530;font-size:0.93rem;line-height:1.72;margin:0 0 24px;font-style:italic;">
           "Schnell, fair und professionell. Das Angebot war mehr als ich erwartet hatte — und die Abholung klappte hervorragend. Vielen Dank!"
         </p>
         <div style="display:flex;align-items:center;gap:12px;">
           <div style="width:42px;height:42px;background:linear-gradient(135deg,#f5a623,#e09415);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <span style="color:#0f2a1d;font-family:'Fraunces',serif;font-weight:700;font-size:1rem;">SK</span>
+            <span style="color:#080808;font-family:'Fraunces',serif;font-weight:700;font-size:1rem;">SK</span>
           </div>
           <div>
-            <div style="font-weight:600;color:#0f2a1d;font-size:0.88rem;">Sabine Kirchner</div>
+            <div style="font-weight:600;color:#080808;font-size:0.88rem;">Sabine Kirchner</div>
             <div style="color:#a09b96;font-size:0.78rem;">Hamburg &middot; BMW 3er</div>
           </div>
         </div>
       </div>
 
       <!-- T3 -->
-      <div class="reveal card-hover" style="background:#faf9f7;border:1.5px solid #ede9e2;border-radius:18px;padding:32px;">
+      <div class="reveal card-hover" style="background:#fafafa;border:1.5px solid #e4e4e4;border-radius:18px;padding:32px;">
         <div style="color:#f5a623;font-size:1.1rem;margin-bottom:18px;">★★★★★</div>
         <p style="color:#3a3530;font-size:0.93rem;line-height:1.72;margin:0 0 24px;font-style:italic;">
           "Kein Stress mit Privatverkäufer-Anfragen, kein Händler der drückt. pkwcash24 hat gemacht was sie versprochen haben. Sehr zufrieden."
         </p>
         <div style="display:flex;align-items:center;gap:12px;">
-          <div style="width:42px;height:42px;background:linear-gradient(135deg,#1a4731,#2d6847);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <div style="width:42px;height:42px;background:linear-gradient(135deg,#111111,#1c1c1c);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
             <span style="color:#fff;font-family:'Fraunces',serif;font-weight:700;font-size:1rem;">MF</span>
           </div>
           <div>
-            <div style="font-weight:600;color:#0f2a1d;font-size:0.88rem;">Markus Fischer</div>
+            <div style="font-weight:600;color:#080808;font-size:0.88rem;">Markus Fischer</div>
             <div style="color:#a09b96;font-size:0.78rem;">Frankfurt &middot; Audi A4</div>
           </div>
         </div>
@@ -526,19 +526,19 @@
 
     <!-- Stats badge -->
     <div style="display:flex;justify-content:center;">
-      <div class="trust-badge reveal" style="display:inline-flex;align-items:center;gap:40px;background:#faf9f7;border:1.5px solid #ede9e2;border-radius:100px;padding:18px 48px;flex-wrap:wrap;justify-content:center;">
+      <div class="trust-badge reveal" style="display:inline-flex;align-items:center;gap:40px;background:#fafafa;border:1.5px solid #e4e4e4;border-radius:100px;padding:18px 48px;flex-wrap:wrap;justify-content:center;">
         <div style="text-align:center;">
-          <div style="font-family:'Fraunces',serif;font-weight:900;font-size:2rem;color:#1a4731;line-height:1;">4.9<span style="font-size:1rem;color:#f5a623;">★</span></div>
+          <div style="font-family:'Fraunces',serif;font-weight:900;font-size:2rem;color:#111111;line-height:1;">4.9<span style="font-size:1rem;color:#f5a623;">★</span></div>
           <div style="font-size:0.73rem;color:#a09b96;margin-top:3px;">Durchschnittsbewertung</div>
         </div>
-        <div class="trust-divider" style="width:1px;height:38px;background:#ede9e2;"></div>
+        <div class="trust-divider" style="width:1px;height:38px;background:#e4e4e4;"></div>
         <div style="text-align:center;">
-          <div style="font-family:'Fraunces',serif;font-weight:900;font-size:2rem;color:#1a4731;line-height:1;">10.000+</div>
+          <div style="font-family:'Fraunces',serif;font-weight:900;font-size:2rem;color:#111111;line-height:1;">10.000+</div>
           <div style="font-size:0.73rem;color:#a09b96;margin-top:3px;">Zufriedene Kunden</div>
         </div>
-        <div class="trust-divider" style="width:1px;height:38px;background:#ede9e2;"></div>
+        <div class="trust-divider" style="width:1px;height:38px;background:#e4e4e4;"></div>
         <div style="text-align:center;">
-          <div style="font-family:'Fraunces',serif;font-weight:900;font-size:2rem;color:#1a4731;line-height:1;">&lt;24h</div>
+          <div style="font-family:'Fraunces',serif;font-weight:900;font-size:2rem;color:#111111;line-height:1;">&lt;24h</div>
           <div style="font-size:0.73rem;color:#a09b96;margin-top:3px;">Bis zur Auszahlung</div>
         </div>
       </div>
@@ -547,7 +547,7 @@
 </section>
 
 <!-- ═══════════════════ FOOTER ═══════════════════ -->
-<footer style="background:#0f2a1d;padding:52px 24px 32px;">
+<footer style="background:#080808;padding:52px 24px 32px;">
   <div style="max-width:1200px;margin:0 auto;">
     <div class="footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;">
 
@@ -555,7 +555,7 @@
       <div>
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
           <div style="width:32px;height:32px;background:#f5a623;border-radius:7px;display:flex;align-items:center;justify-content:center;">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 16L5.5 9H18.5L20 16M4 16H20M4 16L3 20H21L20 16M8 13H10M14 13H16" stroke="#0f2a1d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.5" cy="19" r="1.3" fill="#0f2a1d"/><circle cx="16.5" cy="19" r="1.3" fill="#0f2a1d"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 16L5.5 9H18.5L20 16M4 16H20M4 16L3 20H21L20 16M8 13H10M14 13H16" stroke="#080808" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.5" cy="19" r="1.3" fill="#080808"/><circle cx="16.5" cy="19" r="1.3" fill="#080808"/></svg>
           </div>
           <span style="font-family:'Fraunces',serif;font-weight:900;font-size:1.2rem;color:#fff;letter-spacing:-0.025em;">pkwcash<span style="color:#f5a623;">24</span></span>
         </div>
@@ -595,73 +595,6 @@
   </div>
 </footer>
 
-<!-- ═══════════════════ SCROLL CAR ═══════════════════ -->
-<div id="roadStrip" style="position:fixed;bottom:0;left:0;right:0;height:22px;background:linear-gradient(#1a1a1a,#0d0d0d);z-index:48;pointer-events:none;opacity:0;transition:opacity 0.5s;"></div>
-
-<svg id="scrollCar" viewBox="0 0 260 108" xmlns="http://www.w3.org/2000/svg"
-     style="position:fixed;bottom:22px;left:0;z-index:49;pointer-events:none;opacity:0;will-change:transform;transition:opacity 0.4s;">
-
-  <!-- Ground shadow -->
-  <ellipse cx="130" cy="106" rx="112" ry="5" fill="rgba(0,0,0,0.22)"/>
-
-  <!-- Main body -->
-  <path d="M22,76 L22,63 Q23,55 32,51 L56,42 L76,34 L96,21 L118,13 L135,12 L170,14 L192,36 L206,42 L243,55 Q251,58 252,65 L252,76 Z" fill="#1a4731"/>
-
-  <!-- Roof highlight -->
-  <path d="M96,21 L118,13 L135,12 L170,14 L192,36" stroke="#3a8060" stroke-width="1.5" fill="none" opacity="0.7"/>
-
-  <!-- Windows -->
-  <path d="M100,40 L108,24 Q120,14 136,13 L168,16 L190,37 Z" fill="#061009" opacity="0.9"/>
-  <!-- B-pillar -->
-  <rect x="139" y="13" width="3" height="27" rx="1" fill="#1a4731"/>
-  <!-- Door line -->
-  <line x1="140" y1="40" x2="140" y2="76" stroke="#236040" stroke-width="1.2"/>
-
-  <!-- Side skirt -->
-  <rect x="22" y="72" width="230" height="5" rx="2" fill="#0f2a1d"/>
-
-  <!-- Headlight beam -->
-  <path d="M252,63 L274,50 L278,72 L252,72 Z" fill="#f5a623" opacity="0.07"/>
-  <!-- Headlight -->
-  <path d="M249,60 L254,64 L254,72 L249,74 Z" fill="#fde68a"/>
-  <ellipse cx="251" cy="67" rx="3.5" ry="7" fill="#f5a623"/>
-
-  <!-- Taillight -->
-  <rect x="16" y="59" width="7" height="16" rx="2" fill="#8b1a0a"/>
-  <rect x="17" y="60" width="5" height="14" rx="1" fill="#d42a14" opacity="0.7"/>
-
-  <!-- Rear wheel arch -->
-  <circle cx="68" cy="84" r="24" fill="#0d1f15"/>
-  <!-- Front wheel arch -->
-  <circle cx="193" cy="84" r="24" fill="#0d1f15"/>
-
-  <!-- Rear wheel -->
-  <g class="car-wheel">
-    <circle cx="68" cy="84" r="21" fill="#1a1a1a"/>
-    <circle cx="68" cy="84" r="13.5" fill="#262626"/>
-    <line x1="68" y1="63" x2="68" y2="105" stroke="#6a6a6a" stroke-width="2.2"/>
-    <line x1="47" y1="84" x2="89" y2="84" stroke="#6a6a6a" stroke-width="2.2"/>
-    <line x1="53" y1="69" x2="83" y2="99" stroke="#555" stroke-width="1.5"/>
-    <line x1="83" y1="69" x2="53" y2="99" stroke="#555" stroke-width="1.5"/>
-    <circle cx="68" cy="84" r="6" fill="#c8a030"/>
-    <circle cx="68" cy="84" r="2.8" fill="#f0d060"/>
-  </g>
-
-  <!-- Front wheel -->
-  <g class="car-wheel">
-    <circle cx="193" cy="84" r="21" fill="#1a1a1a"/>
-    <circle cx="193" cy="84" r="13.5" fill="#262626"/>
-    <line x1="193" y1="63" x2="193" y2="105" stroke="#6a6a6a" stroke-width="2.2"/>
-    <line x1="172" y1="84" x2="214" y2="84" stroke="#6a6a6a" stroke-width="2.2"/>
-    <line x1="178" y1="69" x2="208" y2="99" stroke="#555" stroke-width="1.5"/>
-    <line x1="208" y1="69" x2="178" y2="99" stroke="#555" stroke-width="1.5"/>
-    <circle cx="193" cy="84" r="6" fill="#c8a030"/>
-    <circle cx="193" cy="84" r="2.8" fill="#f0d060"/>
-  </g>
-
-  <!-- Gold accent stripe -->
-  <path d="M52,74 L214,74" stroke="#f5a623" stroke-width="1.3" opacity="0.32"/>
-</svg>
 
 <script>
   // Smooth scroll
@@ -677,52 +610,44 @@
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
     btn.innerHTML = '&#10003; Anfrage gesendet! Wir melden uns bald.';
-    btn.style.background = '#0f2a1d';
+    btn.style.background = '#080808';
     btn.style.color = '#fff';
     btn.disabled = true;
     btn.style.transform = 'none';
     btn.style.boxShadow = 'none';
   });
 
-  // ── Scroll-driven Car Animation ──────────────────────────────────────────
+  // ── Ablauf Timeline ───────────────────────────────────────────────────────
   (function() {
-    const car = document.getElementById('scrollCar');
-    const road = document.getElementById('roadStrip');
-    if (!car) return;
+    const section = document.getElementById('ablauf');
+    const line    = document.getElementById('ablaufLine');
+    const steps   = [1,2,3].map(i => document.getElementById('ablaufStep' + i));
+    const icons   = [1,2,3].map(i => document.getElementById('ablaufIcon' + i));
+    if (!section || !line || steps.some(s => !s)) return;
 
-    const wheels = car.querySelectorAll('.car-wheel');
-    const heroHeight = document.querySelector('section').offsetHeight;
+    const thresholds = [0.06, 0.38, 0.68];
+    const iconStyles = [
+      ['#111111', '#ffffff'],
+      ['#f5a623', '#080808'],
+      ['#111111', '#ffffff'],
+    ];
+
     let ticking = false;
 
-    function carWidth() { return parseInt(getComputedStyle(car).width) || 240; }
-
     function update() {
-      const scrolled = window.scrollY;
-      const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      const rect = section.getBoundingClientRect();
+      const sH   = section.offsetHeight - window.innerHeight;
+      const p    = Math.min(Math.max(-rect.top / sH, 0), 1);
 
-      // Fade in after 25% of hero height
-      const fadeStart = heroHeight * 0.25;
-      const fadeEnd   = heroHeight * 0.55;
-      const fade = Math.min(Math.max((scrolled - fadeStart) / (fadeEnd - fadeStart), 0), 1);
-      car.style.opacity  = fade;
-      road.style.opacity = fade;
+      line.style.height = Math.min(p / 0.88, 1) * 100 + '%';
 
-      if (fade === 0) { ticking = false; return; }
-
-      // Scroll progress → horizontal position
-      const cw = carWidth();
-      const startX = -cw - 20;
-      const endX   = window.innerWidth + 20;
-      const progress = scrolled / maxScroll;
-      const x = startX + (endX - startX) * progress;
-      car.style.transform = `translateX(${x}px)`;
-
-      // Wheel rotation (based on distance traveled / circumference)
-      const wheelR = 21 * (cw / 260);
-      const circumference = 2 * Math.PI * wheelR;
-      const traveled = (endX - startX) * progress;
-      const deg = (traveled / circumference) * 360;
-      wheels.forEach(w => { w.style.transform = `rotate(${deg}deg)`; });
+      steps.forEach((step, i) => {
+        const active = p >= thresholds[i];
+        step.style.opacity   = active ? '1' : '0.2';
+        step.style.transform = active ? 'translateY(0)' : 'translateY(10px)';
+        icons[i].style.background = active ? iconStyles[i][0] : '#e4e4e4';
+        icons[i].style.color      = active ? iconStyles[i][1] : '#aaaaaa';
+      });
 
       ticking = false;
     }
@@ -748,7 +673,7 @@
       const palettes = [
         [255, 255, 255],   // white — headlights
         [245, 166, 35],    // gold — brand
-        [200, 230, 215],   // cool green-white — dashboard glow
+        [210, 210, 220],   // cool blue-white — city lights
         [255, 210, 120],   // warm amber — streetlights
       ];
       const c = palettes[Math.floor(Math.random() * palettes.length)];
