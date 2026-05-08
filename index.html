@@ -182,6 +182,19 @@
       .form-grid-3 { grid-template-columns: 1fr !important; }
       .hero-h1 { font-size: 1.95rem !important; }
     }
+
+    /* Hero car */
+    @keyframes heroCarIn {
+      from { opacity: 0; transform: translateX(48px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    #heroCar { opacity: 0; animation: heroCarIn 1.8s cubic-bezier(0.16,1,0.3,1) 0.7s forwards; }
+    @keyframes badgeFloat {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-6px); }
+    }
+    #heroBadge { animation: badgeFloat 3.8s ease-in-out 2.2s infinite; }
+    @media (max-width: 960px) { #heroCar, #heroBadge { display: none !important; } }
   </style>
 </head>
 <body>
@@ -227,6 +240,24 @@
 
   <!-- Night Drive Canvas -->
   <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></canvas>
+
+  <!-- Hero Car Image -->
+  <div id="heroCar" style="position:absolute;right:0;top:0;bottom:0;width:62%;max-width:820px;z-index:1;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.55) 22%,black 46%),linear-gradient(to top,transparent 0%,black 20%);-webkit-mask-composite:destination-in;mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.55) 22%,black 46%),linear-gradient(to top,transparent 0%,black 20%);mask-composite:intersect;">
+    <img src="f30bmw.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 38%;filter:brightness(0.62) saturate(0.72) contrast(1.1);">
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom right,rgba(8,8,8,0.25) 0%,transparent 65%);"></div>
+  </div>
+
+  <!-- Floating Gold Badge -->
+  <div id="heroBadge" style="position:absolute;right:11%;bottom:22%;z-index:2;pointer-events:none;background:linear-gradient(135deg,#f5a623 0%,#e09415 100%);border-radius:16px;padding:12px 20px;box-shadow:0 8px 32px rgba(245,166,35,0.45),0 2px 8px rgba(0,0,0,0.4);display:flex;align-items:center;gap:12px;">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="14" cy="14" r="13" fill="rgba(0,0,0,0.18)"/>
+      <text x="14" y="19" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="14" fill="#080808">&#x20AC;</text>
+    </svg>
+    <div>
+      <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.82rem;color:#080808;line-height:1.2;">Sofortauszahlung</div>
+      <div style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:0.72rem;color:rgba(8,8,8,0.7);line-height:1.2;">in weniger als 24h</div>
+    </div>
+  </div>
 
   <div class="hero-inner" style="max-width:1200px;margin:0 auto;padding:96px 24px 120px;width:100%;position:relative;z-index:1;">
     <div style="max-width:720px;">
